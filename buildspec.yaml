@@ -14,7 +14,9 @@ phases:
     commands:
       - echo "Building the HTML project..."
       - mkdir -p dist
-      - cp -r * dist/
+      - echo "Listing files before copying..."
+      - ls -a
+      - cp -r **/* dist/
   post_build:
     commands:
       - echo "Build phase completed. Preparing to store artifacts..."
