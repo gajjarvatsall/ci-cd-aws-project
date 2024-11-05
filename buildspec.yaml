@@ -3,25 +3,18 @@ version: 0.2
 phases:
   install:
     commands:
-      - echo "Installing NGINX on Amazon Linux..."
-      - sudo yum update -y
-      - sudo yum install nginx -y
+      - echo "No dependencies to install for a simple HTML project."
   pre_build:
     commands:
-      - echo "Starting pre-build phase..."
-      - nginx -v
+      - echo "Starting the build process..."
   build:
     commands:
       - echo "Building the HTML project..."
-      - mkdir -p dist
-      - echo "Listing files before copying..."
-      - ls -a
-      - cp -r **/* dist/
   post_build:
     commands:
-      - echo "Build phase completed. Preparing to store artifacts..."
+      - echo "Build completed successfully."
+
 artifacts:
   files:
-    - 'dist/**/*'
-  base-directory: dist
-  discard-paths: yes
+    - '**/*'
+  base-directory: .
