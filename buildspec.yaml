@@ -3,8 +3,9 @@ version: 0.2
 phases:
   install:
     commands:
-      - echo "Installing NGINX (if required)..."
-      - amazon-linux-extras install nginx1 -y
+      - echo Installing NGINX...
+      - sudo apt-get update
+      - sudo apt-get install nginx1 -y
   pre_build:
     commands:
       - echo "Starting pre-build phase..."
