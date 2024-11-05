@@ -23,6 +23,12 @@ section {
     margin: 10px auto;
 }
 
+.game--title2 {
+    font-size: 50px;
+    color: #d7a62f;
+    margin: 10px auto;
+}
+
 .game--container {
     display: grid;
     grid-template-columns: repeat(3, auto);
