@@ -1,0 +1,24 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - echo "Installing NGINX (if required)..."
+      - amazon-linux-extras install nginx1 -y
+  pre_build:
+    commands:
+      - echo "Starting pre-build phase..."
+      - nginx -v
+  build:
+    commands:
+      - echo "Building the HTML project..."
+      - mkdir -p dist
+      - cp -r * dist/
+  post_build:
+    commands:
+      - echo "Build phase completed. Preparing to store artifacts..."
+artifacts:
+  files:
+    - 'dist/**/*'
+  base-directory: dist
+  discard-paths: yes
